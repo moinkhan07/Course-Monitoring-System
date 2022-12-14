@@ -3,22 +3,26 @@ package com.coursemonitoringsystem.model;
 public class Faculty {
 	private int facultyId;
 	private String facultyName;
-	private String facultyEmail;
-	private String facultyPassword;
 	private String facultyAddress;
+	private String facultyMobile;
+	private String facultyEmail;
+	private String facultyUsername;
+	private String facultyPassword;
 	
 	public Faculty() {
-		
+		// TODO Auto-generated constructor stub
 	}
 
-	public Faculty(int facultyId, String facultyName, String facultyEmail, String facultyPassword,
-			String facultyAddress) {
+	public Faculty(int facultyId, String facultyName, String facultyAddress, String facultyMobile, String facultyEmail,
+			String facultyUsername, String facultyPassword) {
 		super();
 		this.facultyId = facultyId;
 		this.facultyName = facultyName;
-		this.facultyEmail = facultyEmail;
-		this.facultyPassword = facultyPassword;
 		this.facultyAddress = facultyAddress;
+		this.facultyMobile = facultyMobile;
+		this.facultyEmail = facultyEmail;
+		this.facultyUsername = facultyUsername;
+		this.facultyPassword = facultyPassword;
 	}
 
 	public int getFacultyId() {
@@ -37,12 +41,36 @@ public class Faculty {
 		this.facultyName = facultyName;
 	}
 
+	public String getFacultyAddress() {
+		return facultyAddress;
+	}
+
+	public void setFacultyAddress(String facultyAddress) {
+		this.facultyAddress = facultyAddress;
+	}
+
+	public String getFacultyMobile() {
+		return facultyMobile;
+	}
+
+	public void setFacultyMobile(String facultyMobile) {
+		this.facultyMobile = facultyMobile;
+	}
+
 	public String getFacultyEmail() {
 		return facultyEmail;
 	}
 
 	public void setFacultyEmail(String facultyEmail) {
 		this.facultyEmail = facultyEmail;
+	}
+
+	public String getFacultyUsername() {
+		return facultyUsername;
+	}
+
+	public void setFacultyUsername(String facultyUsername) {
+		this.facultyUsername = facultyUsername;
 	}
 
 	public String getFacultyPassword() {
@@ -53,20 +81,13 @@ public class Faculty {
 		this.facultyPassword = facultyPassword;
 	}
 
-	public String getFacultyAddress() {
-		return facultyAddress;
-	}
-
-	public void setFacultyAddress(String facultyAddress) {
-		this.facultyAddress = facultyAddress;
-	}
-
 	@Override
 	public String toString() {
-		return "Faculty [facultyId=" + facultyId + ", facultyName=" + facultyName + ", facultyEmail=" + facultyEmail
-				+ ", facultyPassword=" + facultyPassword + ", facultyAddress=" + facultyAddress + "]";
+		return "Faculty [facultyId=" + facultyId + ", facultyName=" + facultyName + ", facultyAddress=" + facultyAddress
+				+ ", facultyMobile=" + facultyMobile + ", facultyEmail=" + facultyEmail + ", facultyUsername="
+				+ facultyUsername + ", facultyPassword=" + facultyPassword + "]";
 	}
-
+	
 	
 	
 }

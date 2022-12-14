@@ -5,18 +5,18 @@ public class Course {
 	private int courseId;
 	private String courseName;
 	private int courseFee;
-	private String courseDuration;
+	private String courseDescription;
 	
 	public Course() {
 		
 	}
 
-	public Course(int courseId, String courseName, int courseFee, String courseDuration) {
+	public Course(int courseId, String courseName, int courseFee, String courseDescription) {
 		super();
 		this.courseId = courseId;
 		this.courseName = courseName;
 		this.courseFee = courseFee;
-		this.courseDuration = courseDuration;
+		this.courseDescription = courseDescription;
 	}
 
 	public int getCourseId() {
@@ -43,18 +43,18 @@ public class Course {
 		this.courseFee = courseFee;
 	}
 
-	public String getCourseDuration() {
-		return courseDuration;
+	public String getCourseDescription() {
+		return courseDescription;
 	}
 
-	public void setCourseDuration(String courseDuration) {
-		this.courseDuration = courseDuration;
+	public void setCourseDuration(String courseDescription) {
+		this.courseDescription = courseDescription;
 	}
 
 	@Override
 	public String toString() {
 		return "Course [courseId=" + courseId + ", courseName=" + courseName + ", courseFee=" + courseFee
-				+ ", courseDuration=" + courseDuration + "]";
+				+ ", courseDescription=" + courseDescription + "]";
 	}
 
 	
