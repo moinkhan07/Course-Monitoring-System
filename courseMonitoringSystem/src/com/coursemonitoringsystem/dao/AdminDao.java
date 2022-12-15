@@ -61,6 +61,10 @@ public interface AdminDao {
 //                                       <--------- All Course Plan start here ----->
 /*======================================================================================================================*/
  
-	
+    public String createCoursePlan(CoursePlan cp) throws CoursePlanException;
+
+	public List<CoursePlan> getCoursePlanByBatch(int batchId) throws CoursePlanException;
+
+	public CoursePlan getDayWiseCoursePlanofBatch(int batchId , int day) throws CoursePlanException;
 	
 }

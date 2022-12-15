@@ -449,10 +449,90 @@ public class AdminDaoImpl implements AdminDao {
 		return lFaculties;
 	}
 
+	
 //                                       <---------All Course Plan Start Here ----->
 /*======================================================================================================================*/
 
-	
+	@Override
+	public String createCoursePlan(CoursePlan cp) throws CoursePlanException {
+		String msg = "Course Plan not created...";
+
+		try (Connection conn = DBUtil.provideConnection()) {
+			PreparedStatement ps = conn.prepareStatement("insert into courseplan(batchid,daynumber,topic) values(?,?,?)");
+			ps.setInt(1, cp.getBatchId());
+			ps.setInt(2, cp.getDayNumber());
+			ps.setString(3, cp.getTopic());
+			
+			int x = ps.executeUpdate();
+
+			if (x > 0) {
+				msg = "Course plan created successfuly...";
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CoursePlanException(e.getMessage());
+		}
+
+		return msg;
+	}
+
+	@Override
+	public List<CoursePlan> getCoursePlanByBatch(int batchId) throws CoursePlanException {
+		List<CoursePlan> cpList = new ArrayList<>();
+		
+		try (Connection conn = DBUtil.provideConnection()){
+			PreparedStatement ps = conn.prepareStatement("select * from courseplan where batchid = ?");
+			ps.setInt(1, batchId);
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()) {
+				CoursePlan cp = new CoursePlan();
+				cp.setPlanId(rs.getInt("planid"));
+				cp.setBatchId(rs.getInt("batchid"));
+				cp.setDayNumber(rs.getInt("daynumber"));
+				cp.setTopic(rs.getString("topic"));
+				cp.setStatus(rs.getString("status"));
+				cpList.add(cp);
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CoursePlanException(e.getMessage());
+		}
+		
+		return cpList;
+ 	}
+
+	@Override
+	public CoursePlan getDayWiseCoursePlanofBatch(int batchId, int day) throws CoursePlanException {
+		CoursePlan cp = null;
+		
+		try (Connection conn = DBUtil.provideConnection()){
+			PreparedStatement ps = conn.prepareStatement("select * from courseplan where batchid = ? AND daynumber = ?");
+			ps.setInt(1, batchId);
+			ps.setInt(2, day);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				cp = new CoursePlan();
+				cp.setPlanId(rs.getInt("planid"));
+				cp.setBatchId(rs.getInt("batchid"));
+				cp.setDayNumber(rs.getInt("daynumber"));
+				cp.setTopic(rs.getString("topic"));
+				cp.setStatus(rs.getString("status"));
+			}else {
+				throw new CoursePlanException("No plan for this day");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CoursePlanException(e.getMessage());
+		}
+		
+		return cp;
+	}
 }
 
 

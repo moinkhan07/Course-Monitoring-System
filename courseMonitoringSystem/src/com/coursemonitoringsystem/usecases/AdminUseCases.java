@@ -9,9 +9,11 @@ import com.coursemonitoringsystem.dao.AdminDaoImpl;
 import com.coursemonitoringsystem.exception.AdminException;
 import com.coursemonitoringsystem.exception.BatchException;
 import com.coursemonitoringsystem.exception.CourseException;
+import com.coursemonitoringsystem.exception.CoursePlanException;
 import com.coursemonitoringsystem.exception.FacultyException;
 import com.coursemonitoringsystem.model.Batch;
 import com.coursemonitoringsystem.model.Course;
+import com.coursemonitoringsystem.model.CoursePlan;
 import com.coursemonitoringsystem.model.Faculty;
 
 public class AdminUseCases {
@@ -518,7 +520,94 @@ public class AdminUseCases {
 //                                       <--------- All Course Plan Start Here ----->
 /*======================================================================================================================*/
 
-	
+	public boolean createCoursePlan() {
+		boolean flag = false;
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter batch Id :- ");
+		int Id = sc.nextInt();
+
+		System.out.println("Enter day :- ");
+		int day = sc.nextInt();
+
+		System.out.println("Enter day topic :- ");
+		String topic = sc.next();
+		
+		CoursePlan cp = new CoursePlan();
+		cp.setBatchId(Id);
+		cp.setDayNumber(day);
+		cp.setTopic(topic);
+		
+		AdminDao adao = new AdminDaoImpl();
+		
+		try {
+			String msg = adao.createCoursePlan(cp);
+			System.out.println(msg);
+			flag = true;
+		} catch (CoursePlanException e) {
+			e.printStackTrace();
+			flag = false;
+		}
+		
+		return flag;
+	}
+
+	public boolean viewCoursePlanByBatch() {
+		boolean flag = false;
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter batch Id :- ");
+		int bId = sc.nextInt();
+		
+		AdminDao adao = new AdminDaoImpl();
+	    try {
+			List<CoursePlan> list_cp  = adao.getCoursePlanByBatch(bId);
+			list_cp.forEach(cp -> {
+				System.out.println("Course Plan Id : " + cp.getPlanId());
+				System.out.println("Batch Id : " + cp.getBatchId());
+				System.out.println("No of Day : "+ cp.getDayNumber());
+				System.out.println("Topic : " + cp.getTopic());
+				System.out.println("Status : " + cp.getStatus());
+				System.out.println("=============================");
+			});
+			flag = true;
+		} catch (CoursePlanException e) {
+			e.printStackTrace();
+			flag = false;
+		}
+		
+		
+		return flag;
+	}
+
+	public boolean getDayWiseCoursePlanofBatch() {
+		boolean flag = false;
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter batch Id :- ");
+		int Id = sc.nextInt();
+
+		System.out.println("Enter day :- ");
+		int day = sc.nextInt();
+		
+		AdminDao adao = new AdminDaoImpl();
+	    try {
+			CoursePlan cp = adao.getDayWiseCoursePlanofBatch(Id, day);
+			System.out.println(cp);
+			flag = true;
+		} catch (CoursePlanException e) {
+			e.printStackTrace();
+			flag = false;
+		}
+		
+		
+		
+		return flag;
+	}
+
 }
 
 
