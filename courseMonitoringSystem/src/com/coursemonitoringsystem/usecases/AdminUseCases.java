@@ -33,6 +33,7 @@ public class AdminUseCases {
 		try {
 			String result = aDao.adminLogin(user, pass);
 			System.out.println(result);
+			System.out.println();
 			flag = 1;
 		} catch (AdminException e) {
 			e.printStackTrace();
@@ -54,13 +55,13 @@ public class AdminUseCases {
 		int id = sc.nextInt();
 
 		System.out.println("Enter course Name :- ");
-		String name = sc.nextLine();
+		String name = sc.next();
 
 		System.out.println("Enter course fee :- ");
 		int fee = sc.nextInt();
 
 		System.out.println("Enter course description :- ");
-		String desc = sc.nextLine();
+		String desc = sc.next();
 		
 		Course c = new Course();
 	    c.setCourseId(id);
@@ -111,7 +112,7 @@ public class AdminUseCases {
 		return flag;
 	}
 
-	public boolean updateCourseDuration() {
+	public boolean updateCourseDesc() {
 		boolean flag = false;
 
 		Scanner sc = new Scanner(System.in);
@@ -120,7 +121,7 @@ public class AdminUseCases {
 		int cId = sc.nextInt();
 
 		System.out.println("Enter course Description :- ");
-		String desc = sc.nextLine();
+		String desc = sc.next();
 
 		AdminDao ado = new AdminDaoImpl();
 
@@ -150,7 +151,7 @@ public class AdminUseCases {
 		int id = sc.nextInt();
 
 		System.out.println("Enter course Name :- ");
-		String cName = sc.nextLine();
+		String cName = sc.next();
 
 		AdminDao ado = new AdminDaoImpl();
 
@@ -238,10 +239,10 @@ public class AdminUseCases {
 		int studNum = sc.nextInt();
 
 		System.out.println("Enter batch start date :- ");
-		String date = sc.nextLine();
+		String date = sc.next();
 
 		System.out.println("Enter duration :- ");
-		String duration = sc.nextLine();
+		String duration = sc.next();
 		
 		Batch batch = new Batch();
 		batch.setBatchId(bId);
@@ -395,7 +396,7 @@ public class AdminUseCases {
 		int id = sc.nextInt();
 
 		System.out.println("Enter faculty Name :- ");
-		String Name = sc.nextLine();
+		String Name = sc.next();
 
 		AdminDao ado = new AdminDaoImpl();
 
@@ -423,7 +424,7 @@ public class AdminUseCases {
 		int id = sc.nextInt();
 
 		System.out.println("Enter Faculty Address :- ");
-		String add = sc.nextLine();
+		String add = sc.next();
 
 		AdminDao ado = new AdminDaoImpl();
 
@@ -451,7 +452,7 @@ public class AdminUseCases {
 		int id = sc.nextInt();
 
 		System.out.println("Enter faculty mobile :- ");
-		String mobile = sc.nextLine();
+		String mobile = sc.next();
 
 		AdminDao ado = new AdminDaoImpl();
 

@@ -125,7 +125,7 @@ public class AdminDaoImpl implements AdminDao {
 
 		try (Connection conn = DBUtil.provideConnection()) {
 
-			PreparedStatement ps = conn.prepareStatement("update course coursename = ? where courseid = ?");
+			PreparedStatement ps = conn.prepareStatement("update course set coursename = ? where courseid = ?");
 			ps.setString(1, courseName);
 			ps.setInt(2, courseId);
 
@@ -204,7 +204,7 @@ public class AdminDaoImpl implements AdminDao {
 		String msg = "Batch not created...";
 
 		try (Connection conn = DBUtil.provideConnection()) {
-			PreparedStatement ps = conn.prepareStatement("insert into batch values(?,?,?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("insert into batch(batchid,courseid,studentNumber,startdate,duration) values(?,?,?,?,?)");
 
 			ps.setInt(1, batch.getBatchId());
 			ps.setInt(2, batch.getCourseId());
@@ -394,7 +394,7 @@ public class AdminDaoImpl implements AdminDao {
 		String msg = "Faculty not created...";
 
 		try (Connection conn = DBUtil.provideConnection()) {
-			PreparedStatement ps = conn.prepareStatement("insert into faculty values(?,?,?,?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("insert into faculty(facultyname,facultyaddress,facultymobile,facultyemail,facultyusername,facultypassword) values(?,?,?,?,?,?)");
 			ps.setString(1, faculty.getFacultyName());
 			ps.setString(2, faculty.getFacultyAddress());
 			ps.setString(3, faculty.getFacultyMobile());
