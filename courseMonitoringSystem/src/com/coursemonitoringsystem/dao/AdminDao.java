@@ -28,6 +28,8 @@ public interface AdminDao {
 
 	public String updateCourseName(int courseId, String courseName) throws CourseException;
 	
+	public String removeCourseByCourseId(int cId) throws CourseException;
+	
 	public Course getCourseDetail(int CourseId) throws CourseException;
 	
 	public List<Course> getAllCourseDetail() throws CourseException;
@@ -53,6 +55,8 @@ public interface AdminDao {
 	public String updateFacultyAddress(int facultyId , String facultyAddress) throws FacultyException;
 	
 	public String updateFacultyMobile(int facultyId , String facultyMobile) throws FacultyException;
+	
+	public String removeFacultyByFId(int fId) throws FacultyException;
 	
 	public String createFaculty(Faculty faculty) throws FacultyException;
 	

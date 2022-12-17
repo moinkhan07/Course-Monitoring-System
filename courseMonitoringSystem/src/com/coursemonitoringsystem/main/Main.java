@@ -164,6 +164,32 @@ public class Main {
 		}
 	}
 	
+	public static void removeCourseByCId() {
+		Scanner sc = new Scanner(System.in);
+		AdminUseCases auc = new AdminUseCases();
+		boolean flag =  auc.removeCourseByCid();
+		if (flag) {
+			Main.showAdminMenu();
+			return;
+		}
+		while(flag == false) {
+			System.out.println("Do you want to try again?");
+			System.out.println("yes or no : ");
+			String ans = sc.next();
+
+			if (ans.equals("yes")) {
+				flag = auc.removeCourseByCid();
+			} else {
+				Main.showAdminMenu();
+			}
+		}
+		if (flag) {
+			Main.showAdminMenu();
+			return;
+		}
+	}
+	
+	
 	public static void courseDetailsByCId() {
 		Scanner sc = new Scanner(System.in);
 		AdminUseCases auc = new AdminUseCases();
@@ -413,6 +439,33 @@ public class Main {
 			return;
 		}
 	}
+	
+	public static void removeFacultyByFId() {
+		Scanner sc = new Scanner(System.in);
+		AdminUseCases auc = new AdminUseCases();
+		boolean flag =  auc.removeFacultyByfid();
+		if (flag) {
+			Main.showAdminMenu();
+			return;
+		}
+		while(flag == false) {
+			System.out.println("Do you want to try again?");
+			System.out.println("yes or no : ");
+			String ans = sc.next();
+
+			if (ans.equals("yes")) {
+				flag = auc.removeFacultyByfid();
+			} else {
+				Main.showAdminMenu();
+			}
+		}
+		if (flag) {
+			Main.showAdminMenu();
+			return;
+		}
+	}
+	
+	
 		
 	public static void viewAllFacultyDetails() {
 		Scanner sc = new Scanner(System.in);
@@ -688,20 +741,22 @@ public class Main {
 		System.out.println("=====================");
 		System.out.println("1.Create Course");
 		System.out.println("2.Update Course");
-		System.out.println("3.Get Course Detail By Course Id");
-		System.out.println("4.Get All Course  Details");
-		System.out.println("5.Create Batch");
-		System.out.println("6.Update Number Of Student In Batch");
-		System.out.println("7.Get Batch Detail By Batch Id");
-		System.out.println("8.Get All Batch Details");
-		System.out.println("9.Create Faculty");
-		System.out.println("10.Update Faculty");
-		System.out.println("11.Allocate Faculty To Batch");
-		System.out.println("12.Get All Faculty Details");
-		System.out.println("13.Create CoursePlan");
-		System.out.println("14.Get Day-Wise CoursePlan of Batch");
-		System.out.println("15.Get CoursePlan Detail By CoursePlan Id");
-		System.out.println("16.Logout");
+		System.out.println("3.Remove Course By Course Id");                            
+		System.out.println("4.Get Course Detail By Course Id");
+		System.out.println("5.Get All Course  Details");
+		System.out.println("6.Create Batch");
+		System.out.println("7.Update Number Of Student In Batch");
+		System.out.println("8.Get Batch Detail By Batch Id");
+		System.out.println("9.Get All Batch Details");
+		System.out.println("10.Create Faculty");
+		System.out.println("11.Remove Faculty By Faculty Id");                         
+		System.out.println("12.Update Faculty");
+		System.out.println("13.Allocate Faculty To Batch");
+		System.out.println("14.Get All Faculty Details");
+		System.out.println("15.Create CoursePlan");
+		System.out.println("16.Get Day-Wise CoursePlan of Batch");
+		System.out.println("17.Get CoursePlan Detail By CoursePlan Id");
+		System.out.println("18.Logout");
 		int type = sc.nextInt();   
 		if (type == 1) {
 			Main.createCourse();
@@ -724,27 +779,33 @@ public class Main {
 			}
 		}
 		else if (type == 3) {
-			Main.courseDetailsByCId();
+			Main.removeCourseByCId();
 		}
 		else if (type == 4) {
-			Main.viewAllCourseDetails();
+			Main.courseDetailsByCId();
 		}
 		else if (type == 5) {
-			Main.createBatch();
+			Main.viewAllCourseDetails();
 		}
 		else if (type == 6) {
-			Main.updateNumberOfStudent();
+			Main.createBatch();
 		}
 		else if (type == 7) {
-			Main.batchDetailsByBId();
+			Main.updateNumberOfStudent();
 		}
 		else if (type == 8) {
-			Main.viewAllBatchDetails();
+			Main.batchDetailsByBId();
 		}
 		else if (type == 9) {
-			Main.createFaculty();
+			Main.viewAllBatchDetails();
 		}
 		else if (type == 10) {
+			Main.createFaculty();	
+		}
+		else if (type == 11) {
+			Main.removeFacultyByFId();
+		}
+		else if (type == 12) {
 			System.out.println("Please Select How You Want To Update A Faculty : ");
 			System.out.println("1.Update Course By Name");
 			System.out.println("2.Update Course By Mobile");
@@ -761,21 +822,21 @@ public class Main {
 			}else {
 				Main.showAdminMenu();
 			}
-		}
-		else if (type == 11) {
-			Main.AllocateFacultyToBatch();
-		}
-		else if (type == 12) {
-			Main.viewAllFacultyDetails();
+			
 		}
 		else if (type == 13) {
-			Main.createCoursePlan();
+			Main.AllocateFacultyToBatch();
 		}
 		else if (type == 14) {
-			Main.getDayWiseCoursePlanofBatch();
+			Main.viewAllFacultyDetails();
 		}else if (type == 15) {
-			Main.getCoursePlanDetailsByCpId();
+			Main.createCoursePlan();
 		}else if (type == 16) {
+			Main.getDayWiseCoursePlanofBatch();
+		}else if (type == 17) {
+			Main.getCoursePlanDetailsByCpId();
+		}
+		else if (type == 18) {
 			Main.users();
 		}else {
 			System.out.println("Please Enter valid input!");

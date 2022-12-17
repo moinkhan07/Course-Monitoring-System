@@ -73,6 +73,30 @@ public class AdminDaoImpl implements AdminDao {
 
 		return msg;
 	}
+	
+	@Override
+	public String removeCourseByCourseId(int cId) throws CourseException {
+		String msg = "Invalid Course Id";
+		
+		try (Connection conn = DBUtil.provideConnection()) {
+			PreparedStatement ps = conn.prepareStatement("delete from course where courseid = ?");
+			ps.setInt(1, cId);
+			int x = ps.executeUpdate();
+
+			if (x > 0) {
+				msg = "Course Deleted Successfully With Course Id : " + cId;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CourseException(e.getMessage());
+		}
+		
+		
+		return msg;
+	}
+	
+	
 
 	@Override
 	public String updateCourseFee(int courseId, int courseFee) throws CourseException {
@@ -328,6 +352,29 @@ public class AdminDaoImpl implements AdminDao {
 		
 		return msg;
 	}
+	
+	
+	@Override
+	public String removeFacultyByFId(int fId) throws FacultyException {
+        String msg = "Invalid Faculty Id";
+		
+		try (Connection conn = DBUtil.provideConnection()) {
+			PreparedStatement ps = conn.prepareStatement("delete from faculty where facultyid = ?");
+			ps.setInt(1, fId);
+			int x = ps.executeUpdate();
+
+			if (x > 0) {
+				msg = "Faculty Deleted Successfully With Course Id : " + fId;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new FacultyException(e.getMessage());
+		}
+		return msg;
+	}
+	
+	
 
 	@Override
 	public String updateFacultyName(int facultyId, String facultyName) throws FacultyException {

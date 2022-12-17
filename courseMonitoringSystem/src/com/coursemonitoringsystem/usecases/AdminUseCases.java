@@ -83,6 +83,26 @@ public class AdminUseCases {
 		
 	}
 	
+	public boolean removeCourseByCid() {
+		boolean flag = false;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Course Id : ");
+		int rem = sc.nextInt();
+		
+		AdminDao adao = new AdminDaoImpl();
+		try {
+			String msg = adao.removeCourseByCourseId(rem);
+			System.out.println(msg);
+			flag = true;
+		} catch (CourseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			flag = false;
+		}
+		return flag;
+	}
+	
+	
 	public boolean updateCourseFee() {
 		boolean flag = false;
 		
@@ -387,6 +407,27 @@ public class AdminUseCases {
 		
 	     return flag;
 	}
+	
+	public boolean removeFacultyByfid() {
+		boolean flag = false;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Faculty Id : ");
+		int rem = sc.nextInt();
+		
+		AdminDao adao = new AdminDaoImpl();
+		try {
+			String msg = adao.removeFacultyByFId(rem);
+			System.out.println(msg);
+			flag = true;
+		} catch (FacultyException e) {
+			e.printStackTrace();
+			flag = false;
+		}
+		return flag;
+	}
+	
+	
+	
 
 	public boolean updateFacultyName() {
 		boolean flag = false;
