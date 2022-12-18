@@ -738,7 +738,7 @@ public class Main {
 	public static void showAdminMenu() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("select any operation");
-		System.out.println("=====================");
+		System.out.println("==================================");
 		System.out.println("1.Create Course");
 		System.out.println("2.Update Course");
 		System.out.println("3.Remove Course By Course Id");                            

@@ -30,16 +30,18 @@ public class AdminUseCases {
 		String pass = sc.next();
 		
 		AdminDao aDao = new AdminDaoImpl();
+		System.out.println();
 		try {
 			String result = aDao.adminLogin(user, pass);
-			System.out.println(result);
-			System.out.println();
+			System.err.println("===================================================================================================================================");
+			System.out.println("|                                                          " +result + "                                                     |");
+			System.out.println("===================================================================================================================================");
+			System.err.println();
 			flag = 1;
 		} catch (AdminException e) {
 			e.printStackTrace();
 			flag = 0;
 		}
-	
 		return flag;
 		
 	}
@@ -223,15 +225,15 @@ public class AdminUseCases {
 
 		try {
 			List<Course> c1 = ado.getAllCourseDetail();
-
+			System.out.println();
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("|"+ "CourseId" + "     |   " + "CourseName" + "     |    " + "CourseFee" + "    |    " + "CourseDescription" + " |");
+			System.out.println("---------------------------------------------------------------------------");
 			for (Course c2 : c1) {
-				System.out.println("Course Id :- " +c2.getCourseId());
-				System.out.println("Course Name :- " + c2.getCourseName());
-				System.out.println("Course Fee :- " + c2.getCourseFee());
-				System.out.println("Course Description :- " + c2.getCourseDescription());
-				System.out.println("==========================");
+				System.out.println("  " + c2.getCourseId() + "               " + c2.getCourseName() + "                 " + c2.getCourseFee() + "               " + c2.getCourseDescription());
+			    System.out.println("---------------------------------------------------------------------------");
 			}
-
+			System.out.println();
 			flag = true;
 
 		} catch (CourseException e) {
@@ -314,15 +316,15 @@ public class AdminUseCases {
 		
 		try {
 			List<Batch> batch = ado.getAllBatchDetail();
+			System.out.println();
+			System.out.println("-----------------------------------------------------------------------------------------------------------------");
+			System.out.println("|"+ "BatchId" + "     |   " + "CourseId" + "     |    " + "FacultyId" + "    |    " + "No_Of_Students" + "     |     " + "StartDate" +"      |     " + "Duration"+"     |     ");
+			System.out.println("-----------------------------------------------------------------------------------------------------------------");
 			batch.forEach(b ->{
-				System.out.println("Batch Id : " + b.getBatchId());
-				System.out.println("Course Id : " + b.getCourseId());
-				System.out.println("Faculty Id : " + b.getFacultyId());
-				System.out.println("No of Student : " + b.getNumberOfStudent());
-				System.out.println("Start Date : " + b.getStartDate());
-				System.out.println("Duration : " + b.getDuration());
-				System.out.println("=============================");
+			System.out.println("   " + b.getBatchId() + "            " + b.getCourseId() + "               " + b.getFacultyId() + "                   " + b.getNumberOfStudent() + "                  " + b.getStartDate() + "             " + b.getDuration());
+			System.out.println("-----------------------------------------------------------------------------------------------------------------");
 			});
+			System.out.println();
 			flag = true;
 		} catch (BatchException e) {
 			e.printStackTrace();
@@ -519,15 +521,15 @@ public class AdminUseCases {
         AdminDao adao = new AdminDaoImpl();
         try {
 			List<Faculty> list = adao.getFacultyAllDetail();
+			System.out.println();
+			System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+			System.out.println("| " + "FacultyId" +"   |    " + "FacultyName" +"   |    " + "FacultyAddress" + "    |    " + "FacultyMobile" +"    |     " + "FacultyEmail" + "    |     " + "FacultyUserName" + " |");
+			System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 			list.forEach(f -> {
-				System.out.println("Faculty Id : " + f.getFacultyId());
-				System.out.println("Faculty Name : " + f.getFacultyName());
-				System.out.println("Faculty Address : " + f.getFacultyAddress());
-				System.out.println("Faculty Mobile : " +f.getFacultyMobile());
-				System.out.println("Faculty Email : " + f.getFacultyEmail());
-				System.out.println("Faculty User-Name : " + f.getFacultyUsername());
-				System.out.println("=================================");
+				System.out.println("   " + f.getFacultyId() + "                " + f.getFacultyName() + "                 " + f.getFacultyAddress() + "                " + f.getFacultyMobile() + "              " + f.getFacultyEmail() + "       " + f.getFacultyUsername());
+            System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 			});
+			System.out.println();
 			flag = true;
 		} catch (FacultyException e) {
 			e.printStackTrace();
