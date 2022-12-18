@@ -29,7 +29,6 @@ public class FacultyDaoImpl implements FacultyDao{
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new FacultyException(e.getMessage());
 		}
 		
@@ -52,7 +51,7 @@ public class FacultyDaoImpl implements FacultyDao{
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new FacultyException(e.getMessage());
 		}
 		
@@ -85,7 +84,7 @@ public class FacultyDaoImpl implements FacultyDao{
 			} 
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CoursePlanException(e.getMessage());
 		}
 		
@@ -120,7 +119,7 @@ public class FacultyDaoImpl implements FacultyDao{
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CoursePlanException(e.getMessage());
 		}
 
@@ -163,7 +162,7 @@ public class FacultyDaoImpl implements FacultyDao{
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CoursePlanException(e.getMessage());
 
 		}

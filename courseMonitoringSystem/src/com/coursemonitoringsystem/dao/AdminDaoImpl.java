@@ -39,7 +39,6 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new AdminException(e.getMessage());
 		}
 
@@ -67,7 +66,6 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new CourseException(e.getMessage());
 		}
 
@@ -88,7 +86,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CourseException(e.getMessage());
 		}
 		
@@ -113,7 +111,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CourseException(e.getMessage());
 		}
 
@@ -136,7 +134,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CourseException(e.getMessage());
 		}
 
@@ -159,7 +157,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CourseException(e.getMessage());
 		}
 
@@ -183,7 +181,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CourseException(e.getMessage());
 		}
 
@@ -213,7 +211,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CourseException(e.getMessage());
 		}
 
@@ -243,7 +241,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new BatchException(e.getMessage());
 		}
 
@@ -266,7 +264,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new BatchException(e.getMessage());
 		}
 
@@ -299,7 +297,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new BatchException(e.getMessage());
 		}
 
@@ -321,7 +319,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new BatchException(e.getMessage());
 		}
 		
@@ -346,7 +344,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new BatchException(e.getMessage());
 		}
 		
@@ -368,7 +366,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new FacultyException(e.getMessage());
 		}
 		return msg;
@@ -389,7 +387,7 @@ public class AdminDaoImpl implements AdminDao {
 				msg = "Faculty name updated successfully!";
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new FacultyException(e.getMessage());
 		}
 		
@@ -409,7 +407,7 @@ public class AdminDaoImpl implements AdminDao {
 				msg = "Faculty address updated successfully!";
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new FacultyException(e.getMessage());
 		}
 		
@@ -429,7 +427,7 @@ public class AdminDaoImpl implements AdminDao {
 					msg = "Faculty Mobile Number updated successfully!";
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				
 				throw new FacultyException(e.getMessage());
 			}
 			
@@ -456,7 +454,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new FacultyException(e.getMessage());
 		}
 
@@ -489,7 +487,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new FacultyException(e.getMessage());
 		}
 		
@@ -517,7 +515,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CoursePlanException(e.getMessage());
 		}
 
@@ -545,7 +543,7 @@ public class AdminDaoImpl implements AdminDao {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			throw new CoursePlanException(e.getMessage());
 		}
 		
@@ -574,7 +572,6 @@ public class AdminDaoImpl implements AdminDao {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new CoursePlanException(e.getMessage());
 		}
 		

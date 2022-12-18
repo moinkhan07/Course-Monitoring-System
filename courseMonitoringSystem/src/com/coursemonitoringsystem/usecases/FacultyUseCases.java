@@ -27,7 +27,7 @@ public class FacultyUseCases {
 			flag = 1;
 		} catch (FacultyException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = 0;
 		}
 		
@@ -51,7 +51,7 @@ public class FacultyUseCases {
 			flag = 1;
 		} catch (FacultyException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = 0;
 		}
 		
@@ -78,7 +78,7 @@ public class FacultyUseCases {
 			flag = 1;
 		} catch (CoursePlanException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = 0;
 		}	
 		
@@ -105,7 +105,7 @@ public class FacultyUseCases {
 			flag = 1;
 		} catch (CoursePlanException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = 0;
 		}
 		
@@ -138,7 +138,7 @@ public class FacultyUseCases {
 			flag = 1;
 		} catch (CoursePlanException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = 0;
 		}
 		
@@ -148,25 +148,3 @@ public class FacultyUseCases {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

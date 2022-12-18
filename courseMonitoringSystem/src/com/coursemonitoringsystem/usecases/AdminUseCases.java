@@ -39,7 +39,7 @@ public class AdminUseCases {
 			System.err.println();
 			flag = 1;
 		} catch (AdminException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = 0;
 		}
 		return flag;
@@ -77,7 +77,7 @@ public class AdminUseCases {
 			System.out.println(msg);
 			flag = 1;
 		} catch (CourseException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = 0;
 		}
 		
@@ -98,7 +98,7 @@ public class AdminUseCases {
 			flag = true;
 		} catch (CourseException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
 		return flag;
@@ -126,7 +126,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (CourseException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -155,7 +155,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (CourseException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -185,7 +185,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (CourseException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -210,7 +210,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (CourseException e) {
-		    e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -237,7 +237,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (CourseException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -279,7 +279,7 @@ public class AdminUseCases {
 			System.out.println(msg);
 			flag = true;
 		} catch (BatchException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
 		
@@ -301,7 +301,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (BatchException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -327,7 +327,7 @@ public class AdminUseCases {
 			System.out.println();
 			flag = true;
 		} catch (BatchException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
 
@@ -349,7 +349,7 @@ public class AdminUseCases {
 			System.out.println(msg);
 			flag = true;
 		} catch (BatchException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
 		
@@ -403,7 +403,7 @@ public class AdminUseCases {
 				flag = true;
 			} catch (FacultyException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println(e.getMessage());
 				flag = false;
 			}
 		
@@ -422,7 +422,7 @@ public class AdminUseCases {
 			System.out.println(msg);
 			flag = true;
 		} catch (FacultyException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
 		return flag;
@@ -451,7 +451,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (FacultyException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -479,7 +479,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (FacultyException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -507,7 +507,7 @@ public class AdminUseCases {
 			flag = true;
 
 		} catch (FacultyException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 
 		}
@@ -526,13 +526,13 @@ public class AdminUseCases {
 			System.out.println("| " + "FacultyId" +"   |    " + "FacultyName" +"   |    " + "FacultyAddress" + "    |    " + "FacultyMobile" +"    |     " + "FacultyEmail" + "    |     " + "FacultyUserName" + " |");
 			System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 			list.forEach(f -> {
-				System.out.println("   " + f.getFacultyId() + "                " + f.getFacultyName() + "                 " + f.getFacultyAddress() + "                " + f.getFacultyMobile() + "              " + f.getFacultyEmail() + "       " + f.getFacultyUsername());
+				System.out.println("   " + f.getFacultyId() + "                " + f.getFacultyName() + "                 " + f.getFacultyAddress() + "                " + f.getFacultyMobile() + "          " + f.getFacultyEmail() + "            " + f.getFacultyUsername());
             System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 			});
 			System.out.println();
 			flag = true;
 		} catch (FacultyException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
         
@@ -555,7 +555,7 @@ public class AdminUseCases {
 			System.out.println(msg);
 			flag = true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		} 
 		return flag;
@@ -590,7 +590,7 @@ public class AdminUseCases {
 			System.out.println(msg);
 			flag = true;
 		} catch (CoursePlanException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
 		
@@ -618,7 +618,7 @@ public class AdminUseCases {
 			});
 			flag = true;
 		} catch (CoursePlanException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
 		
@@ -643,26 +643,11 @@ public class AdminUseCases {
 			System.out.println(cp);
 			flag = true;
 		} catch (CoursePlanException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			flag = false;
 		}
-		
-		
-		
+				
 		return flag;
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
