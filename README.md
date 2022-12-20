@@ -15,3 +15,10 @@
 - java
 - Mysql
 - Jdbc
+
+# Admin Functionalities : 
+<img src="" >
+
+
+# Faculty Functionalities : 
+<img src="" >
