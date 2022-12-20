@@ -21,4 +21,4 @@
 
 
 # Faculty Functionalities : 
-<img src="" >
+<img src="./assets/faculty_F.png" >
