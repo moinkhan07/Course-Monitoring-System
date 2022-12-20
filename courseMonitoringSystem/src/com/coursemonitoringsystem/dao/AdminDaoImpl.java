@@ -362,7 +362,7 @@ public class AdminDaoImpl implements AdminDao {
 			int x = ps.executeUpdate();
 
 			if (x > 0) {
-				msg = "Faculty Deleted Successfully With Course Id : " + fId;
+				msg = "Faculty Deleted Successfully With faculty Id : " + fId;
 			}
 
 		} catch (SQLException e) {
