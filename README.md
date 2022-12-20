@@ -17,7 +17,7 @@
 - Jdbc
 
 # Admin Functionalities : 
-<img src="" >
+<img src="./assets/admin_F.png" >
 
 
 # Faculty Functionalities : 
